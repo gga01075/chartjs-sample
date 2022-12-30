@@ -2,28 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>chart js 샘플페이지</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <canvas id="myChartOne"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="myChartTwo"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="myChartThree"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="myChartFour"></canvas>
-            </div>
-            <div class="col-md-6">
-                <canvas id="myChartFive"></canvas>
             </div>
         </div>
     </div>
@@ -49,161 +39,15 @@
             : ​canvas 콘텐츠를 주어진 ImageBitmap으로 대체하기위한 기능만을 제공하는 
               ImageBitmapRenderingContext 객체를 반환한다. 
         */
-        let myChartOne = document.getElementById('myChartOne').getContext('2d');
-        let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
-        let myChartThree = document.getElementById('myChartThree').getContext('2d');
-        let myChartFour = document.getElementById('myChartFour').getContext('2d');
-        let myChartFive = document.getElementById('myChartFive').getContext('2d');
-
+        // let myChartOne = document.getElementById('myChartOne').getContext('2d');
+        let myChartOne = document.getElementById('myChartOne');
+       
         /* 
         new Chart생성자를 사용하는데 첫번째 인수로는 컨텍스트 객체를, 
         두번째 인수에는 해당 차트에 넣을 타입, 데이터 등을 객체로 넘겨주면 된다. 
         
         */
         let barChartOne = new Chart(myChartOne, {
-            type : 'bar', // pie, line, doughnut, polarArea 등
-            data : {
-               labels : ['학원', '연구원', '출판사', '미디어사', '위니브'],
-               datasets : [{
-                 label : '바울랩 매출액',  // 데이터가 가리키고 있는 전체 영역의 라벨
-                 data : [
-                    10,
-                    100,
-                    100,
-                    200,
-                    1000
-                 ]
-               }]
-            }
-
-        })
-
-
-        let barChartTwo = new Chart(myChartTwo, {
-            type : 'bar', // pie, line, doughnut, polarArea 등
-            data : {
-               labels : ['학원', '연구원', '출판사', '미디어사', '위니브'],
-               datasets : [{
-                 label : '바울랩 매출액',  // 데이터가 가리키고 있는 전체 영역의 라벨
-                 data : [  // 각 축의 데이터값
-                    200,
-                    100,
-                    250,
-                    200,
-                    1000
-                 ],
-                 backgroundColor : [ // 각 축의 데이터값의 배경색
-                    'red',
-                    'rgba(255,255,0, 0.5)',
-                    '#990000',
-                    'skyblue',
-                    'dodgerblue'
-                 ],
-                 borderWidth : 5,  // border의 넓이
-                 borderColor : '#000', // border의 색상
-                 hoverBorderWidth : 8, //  hover시 border의 넓이
-               }]
-            }
-
-        });
-
-
-        let barChartThree = new Chart(myChartThree, {
-            type : 'bar', // pie, line, doughnut, polarArea 등
-            data : {
-               labels : ['학원', '연구원', '출판사', '미디어사', '위니브'],
-               datasets : [{
-                 label : '바울랩 매출액',  // 데이터가 가리키고 있는 전체 영역의 라벨
-                 data : [  // 각 축의 데이터값
-                    200,
-                    100,
-                    250,
-                    200,
-                    1000
-                 ],
-                 backgroundColor : [ // 각 축의 데이터값의 배경색
-                    'red',
-                    'rgba(255,255,0, 0.5)',
-                    '#990000',
-                    'skyblue',
-                    'dodgerblue'
-                 ],
-                 borderWidth : 5,  // border의 넓이
-                 borderColor : '#000', // border의 색상
-                 hoverBorderWidth : 8, //  hover시 border의 넓이
-               }]
-            },
-            options : {
-                title : {   // 차트의 제목
-                    display : true,
-                    text : '바울랩 매출',
-                    fontSize : 30,
-                    fontColor : 'red'
-                },
-                legend : {  // 범례
-                    display: true,
-                    position : 'top',  // right, left, top, bottom
-
-                },
-                tooltips : { // 툴팁
-                    enabled : false
-                },
-                layout : {
-                    padding : {
-                        left : 10,
-                        right : 10,
-                        top : 20,
-                        bottom : 0
-                    }
-                }
-            }
-
-        });
-
-        let barChartFour = new Chart(myChartFour, {
-            type : 'line', // pie, line, doughnut, polarArea 등
-            data : {
-               labels : ['학원', '연구원', '출판사', '미디어사', '위니브'],
-               datasets : [{
-                 label : '바울랩 매출액',  // 데이터가 가리키고 있는 전체 영역의 라벨
-                 data : [  // 각 축의 데이터값
-                    200,
-                    100,
-                    250,
-                    200,
-                    1000
-                 ],
-                 backgroundColor : [ // 각 축의 데이터값의 배경색
-                    'red',
-                    'rgba(255,255,0, 0.5)',
-                    '#990000',
-                    'skyblue',
-                    'dodgerblue'
-                 ],
-                 borderWidth : 5,  // border의 넓이
-                 borderColor : '#000', // border의 색상
-                 hoverBorderWidth : 8, //  hover시 border의 넓이
-               }]
-            },
-            options : {
-                title : {   // 차트의 제목
-                    display : true,
-                    text : '바울랩 매출',
-                    fontSize : 30,
-                    fontColor : 'red'
-                },
-                legend : {  // 범례
-                    display: true,
-                    position : 'top',  // right, left, top, bottom
-
-                },
-  
-               
-            }
-
-        });
-
-        let barChartFive = new Chart(myChartFive, {
             type : 'bar',
             data : {
                 labels: ['일', '월', '화', '수', '목', '금', '토'],
@@ -211,42 +55,95 @@
                     {
                         axis: 'y',
                         label: '분석기간',
-                        data: [
-                            20,
-                            100,
-                            150,
-                            200,
-                            100,
-                            50,
-                            300
+                        data: [20,100,150,200, 100,50,300],
+                        backgroundColor:  [
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
                         ],
-                        backgroundColor:  '#ffff00',
                     },
                     {
                         axis: 'y',
                         label: '비교기간',
-                        data: [
-                            20,
-                            80,
-                            120,
-                            200,
-                            300,
-                            50,
-                            100
-                        ],
-                        backgroundColor: '#cceedd',
-                          
-                                    
-                      }
+                        data: [20,80,120,200,300,50,100],
+                        backgroundColor:[
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        ]       
+                    }
                 ]
             },
         
             options : {
                 indexAxis: 'y',
                 responsive : true,
-            }
+                /*
+                onClick: function(point, event) {
+                    console.log(event[0].index);
+                },
+                */        
+            },
+            plugins: [{
+                // 범례 색깔 정하기(클릭이벤트 때 이거 안하면 지멋대로 바뀜)
+                beforeDraw: function(c) {
+                    let legends = c.legend.legendItems;
+                    legends[0].fillStyle = '#ffff00';
+                    legends[1].fillStyle = '#cceedd';
+        
+                }
+            }]
 
         });
+
+        function clickHandler(click) {
+
+            const color1 = [
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        '#ffff00',
+                        ];
+            const color2 = [
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        '#cceedd',    
+                        ];
+
+           barChartOne.config.data.datasets[0].backgroundColor = color1;
+           barChartOne.config.data.datasets[1].backgroundColor = color2;
+
+           const points = barChartOne.getElementsAtEventForMode(click, 'nearest', {
+            intersect : true
+           }, true);
+           console.log(points[0]);
+           if(points[0]) {
+            barChartOne.data.datasets.map(el => el.backgroundColor[points[0].index] = 'black')
+           }
+
+           barChartOne.update();
+        }
+
+        myChartOne.onclick = clickHandler;
+
+        
+
+
 
     </script>
 </body>
