@@ -124,7 +124,7 @@ function clickHandler(click) {
    }, true);
    console.log(points[0]);
    if(points[0]) {
-    barChartOne.data.datasets.map(el => el.backgroundColor[points[0].index] = 'black')
+    barChartOne.data.datasets.map(el => el.backgroundColor[points[0].index] = '#ff0000')
    }
 
    barChartOne.update();
