@@ -15,7 +15,7 @@ let LineChartTwo = new Chart(myChartTwo, {
                        140,20,120,70,
                        0,200,120,140
                       ],
-                borderColor: '#ffff00',
+                borderColor: '#c6e638',
                 tension: 0  // 0: 직선,  1: 완전 흐물거리는 곡선
             },
             {
@@ -25,7 +25,7 @@ let LineChartTwo = new Chart(myChartTwo, {
                         20,50,140,20,
                         110,30,40,200,
                         200,40,150,200],
-                 borderColor: '#00dedd',
+                 borderColor: 'dodgerblue',
                  tension: 0
             }
         ]
@@ -57,8 +57,8 @@ let LineChartTwo = new Chart(myChartTwo, {
         // 범례 색깔 정하기(클릭이벤트 때 이거 안하면 지멋대로 바뀜)
         beforeDraw: function(c) {
             let legends = c.legend.legendItems;
-            legends[0].fillStyle = '#ffff00';
-            legends[1].fillStyle = '#00dedd';
+            legends[0].fillStyle = '#c6e638';
+            legends[1].fillStyle = 'dodgerblue';
 
         }
     }
