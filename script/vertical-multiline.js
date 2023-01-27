@@ -26,7 +26,7 @@ let LineChartTwo = new Chart(myChartTwo, {
                         110,30,40,200,
                         200,40,150,200],
                  borderColor: 'dodgerblue',
-                 tension: 0
+                 tension: 0.5
             }
         ]
     },
